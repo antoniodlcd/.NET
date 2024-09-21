@@ -1,0 +1,127 @@
+﻿<Window x:Class="CalculadoraIUSemi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculadoraIUSemi"
+        mc:Ignorable="d"
+        Title="Mi Calculadora" Height="460" Width="850"
+        WindowStartupLocation="CenterScreen"
+        Background="#263238">
+
+    <Window.Resources>
+        <!-- Estilo de los botones básicos -->
+        <Style TargetType="Button" x:Key="BasicButtonStyle">
+            <Setter Property="Background" Value="#546E7A"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <EventSetter Event="Click" Handler="Button_Click"/>
+        </Style>
+
+        <!-- Estilo de los botones especiales -->
+        <Style TargetType="Button" x:Key="SpecialButtonStyle" BasedOn="{StaticResource BasicButtonStyle}">
+            <Setter Property="Background" Value="#FF7043"/>
+        </Style>
+
+        <!-- Estilo de los botones avanzados -->
+        <Style TargetType="Button" x:Key="AdvancedButtonStyle" BasedOn="{StaticResource BasicButtonStyle}">
+            <Setter Property="Background" Value="#42A5F5"/>
+        </Style>
+
+        <!-- Estilo de los botones de operación -->
+        <Style TargetType="Button" x:Key="OperatorButtonStyle" BasedOn="{StaticResource BasicButtonStyle}">
+            <Setter Property="Background" Value="#FFC107"/>
+        </Style>
+    </Window.Resources>
+
+    <Border Padding="10">
+        <StackPanel>
+            <!-- Menú -->
+            <Menu Margin="0 5 5 5" HorizontalAlignment="Left" Background="{x:Null}" Foreground="WhiteSmoke">
+                <MenuItem Header="Archivo">
+                    <MenuItem x:Name="ModoAvanzodiItem" Header="Modo Avanzado" IsCheckable="True" 
+                              Checked="ModoAvanzadoItem_Checked" Unchecked="ModoAvanzadoItem_Unchecked" Foreground="Black"/>
+                    <Separator/>
+                    <MenuItem x:Name="SalirMenuItem" Header="Salir" Click="SalirMenuItem_Click" Foreground="Black"/>
+                </MenuItem>
+                <MenuItem Header="Ayuda">
+                    <MenuItem Header="Acerca de"/>
+                </MenuItem>
+            </Menu>
+
+            <!-- Pantalla de resultados -->
+            <TextBox x:Name="Screen" 
+                     Margin="0 0 0 15" Padding="10"
+                     VerticalContentAlignment="Center" HorizontalContentAlignment="Right"
+                     IsReadOnly="True" FontSize="24" Background="#CFD8DC" Foreground="#37474F" />
+
+            <!-- Modo Básico -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Fila 1: 7 8 9 C CE -->
+                <Button Content="7" Grid.Row="0" Grid.Column="0" Style="{StaticResource BasicButtonStyle}"/>
+                <Button Content="8" Grid.Row="0" Grid.Column="1" Style="{StaticResource BasicButtonStyle}"/>
+                <Button Content="9" Grid.Row="0" Grid.Column="2" Style="{StaticResource BasicButtonStyle}"/>
+                <Button Content="C" Grid.Row="0" Grid.Column="3" Style="{StaticResource SpecialButtonStyle}"/>
+                <Button Content="CE" Grid.Row="0" Grid.Column="4" Style="{StaticResource SpecialButtonStyle}"/>
+
+                <!-- Fila 2: 4 5 6 * / -->
+                <Button Content="4" Grid.Row="1" Grid.Column="0" Style="{StaticResource BasicButtonStyle}"/>
+                <Button Content="5" Grid.Row="1" Grid.Column="1" Style="{StaticResource BasicButtonStyle}"/>
+                <Button Content="6" Grid.Row="1" Grid.Column="2" Style="{StaticResource BasicButtonStyle}"/>
+                <Button Content="*" Grid.Row="1" Grid.Column="3" Style="{StaticResource OperatorButtonStyle}"/>
+                <Button Content="/" Grid.Row="1" Grid.Column="4" Style="{StaticResource OperatorButtonStyle}"/>
+
+                <!-- Fila 3: 1 2 3 + - -->
+                <Button Content="1" Grid.Row="2" Grid.Column="0" Style="{StaticResource BasicButtonStyle}"/>
+                <Button Content="2" Grid.Row="2" Grid.Column="1" Style="{StaticResource BasicButtonStyle}"/>
+                <Button Content="3" Grid.Row="2" Grid.Column="2" Style="{StaticResource BasicButtonStyle}"/>
+                <Button Content="+" Grid.Row="2" Grid.Column="3" Style="{StaticResource OperatorButtonStyle}"/>
+                <Button Content="-" Grid.Row="2" Grid.Column="4" Style="{StaticResource OperatorButtonStyle}"/>
+
+                <!-- Fila 4: 0 , = -->
+                <Button Content="0" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource BasicButtonStyle}"/>
+                <Button Content="," Grid.Row="3" Grid.Column="2" Style="{StaticResource OperatorButtonStyle}"/>
+                <Button Content="=" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Style="{StaticResource SpecialButtonStyle}"/>
+            </Grid>
+
+            <!-- Modo Avanzado -->
+            <Grid x:Name="EspacioModoAvanzado" Margin="0 15 0 0" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button Content="Sqrt" Grid.Row="0" Grid.Column="0" Style="{StaticResource AdvancedButtonStyle}"/>
+                <Button Content="Log" Grid.Row="0" Grid.Column="1" Style="{StaticResource AdvancedButtonStyle}"/>
+                <Button Content="Sin" Grid.Row="0" Grid.Column="2" Style="{StaticResource AdvancedButtonStyle}"/>
+                <Button Content="Cos" Grid.Row="0" Grid.Column="3" Style="{StaticResource AdvancedButtonStyle}"/>
+                <Button Content="Tan" Grid.Row="1" Grid.Column="0" Style="{StaticResource AdvancedButtonStyle}"/>
+                <Button Content="Pi" Grid.Row="1" Grid.Column="1" Style="{StaticResource AdvancedButtonStyle}"/>
+            </Grid>
+        </StackPanel>
+    </Border>
+</Window>

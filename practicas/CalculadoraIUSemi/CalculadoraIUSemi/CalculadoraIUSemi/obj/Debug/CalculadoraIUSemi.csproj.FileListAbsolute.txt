@@ -1,0 +1,15 @@
+C:\Users\angel\source\repos\CalculadoraIUSemi\CalculadoraIUSemi\obj\Debug\CalculadoraIUSemi.csproj.AssemblyReference.cache
+C:\Users\angel\source\repos\CalculadoraIUSemi\CalculadoraIUSemi\obj\Debug\MainWindow.g.cs
+C:\Users\angel\source\repos\CalculadoraIUSemi\CalculadoraIUSemi\obj\Debug\App.g.cs
+C:\Users\angel\source\repos\CalculadoraIUSemi\CalculadoraIUSemi\obj\Debug\CalculadoraIUSemi_MarkupCompile.cache
+C:\Users\angel\source\repos\CalculadoraIUSemi\CalculadoraIUSemi\obj\Debug\CalculadoraIUSemi_MarkupCompile.lref
+C:\Users\angel\source\repos\CalculadoraIUSemi\CalculadoraIUSemi\bin\Debug\CalculadoraIUSemi.exe.config
+C:\Users\angel\source\repos\CalculadoraIUSemi\CalculadoraIUSemi\bin\Debug\CalculadoraIUSemi.exe
+C:\Users\angel\source\repos\CalculadoraIUSemi\CalculadoraIUSemi\bin\Debug\CalculadoraIUSemi.pdb
+C:\Users\angel\source\repos\CalculadoraIUSemi\CalculadoraIUSemi\obj\Debug\MainWindow.baml
+C:\Users\angel\source\repos\CalculadoraIUSemi\CalculadoraIUSemi\obj\Debug\CalculadoraIUSemi.g.resources
+C:\Users\angel\source\repos\CalculadoraIUSemi\CalculadoraIUSemi\obj\Debug\CalculadoraIUSemi.Properties.Resources.resources
+C:\Users\angel\source\repos\CalculadoraIUSemi\CalculadoraIUSemi\obj\Debug\CalculadoraIUSemi.csproj.GenerateResource.cache
+C:\Users\angel\source\repos\CalculadoraIUSemi\CalculadoraIUSemi\obj\Debug\CalculadoraIUSemi.csproj.CoreCompileInputs.cache
+C:\Users\angel\source\repos\CalculadoraIUSemi\CalculadoraIUSemi\obj\Debug\CalculadoraIUSemi.exe
+C:\Users\angel\source\repos\CalculadoraIUSemi\CalculadoraIUSemi\obj\Debug\CalculadoraIUSemi.pdb

@@ -1,0 +1,42 @@
+# Archivos generados por Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Archivos de compilación
+bin/
+obj/
+
+# Paquetes de NuGet
+packages/
+*.nupkg
+# Si se usa NuGet para la restauración de paquetes, se puede ignorar la carpeta packages/
+# Los archivos .nuspec y .nupkg en la raíz de un proyecto no deben ignorarse.
+
+# Configuración de entornos
+*.env
+*.vsconfig
+
+# Archivos de configuración de depuración y otros datos
+*.ide
+
+# Archivos de configuración de Rider (si se usa)
+.idea/
+
+# Archivos de logs
+*.log
+
+# Archivos de la carpeta publish
+publish/
+
+# Datos generados por el sistema
+.DS_Store
+Thumbs.db
+
+# Archivos específicos de Mac
+*.DS_Store
+
+# Archivos específicos de Windows
+*.pdb
